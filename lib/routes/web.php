@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['namespace' => 'Admin'], function () {
+    // Login
+    Route::group(['prefix' => 'login', 'middleware' => 'CheckedLogIn'], function () {
+        Route::get('/', 'LoginController@getLogin');
+        Route::post('/', 'LoginController@postLogin');
+    });
+
+    // Logout
+    Route::get('logout', 'HomeController@getLogout');
+
+    // Home
+    Route::group(['prefix' => 'admin', 'middleware' => 'CheckedLogOut'], function () {
+        Route::get('home', 'HomeController@getHome');
+    });
+});
