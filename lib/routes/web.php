@@ -31,6 +31,8 @@ Route::group(['namespace' => 'Admin'], function () {
         // category
         Route::group(['prefix' => 'category'], function () {
             Route::get('/', 'CategoryController@getCate');
+            Route::post('/', 'CategoryController@postCate');
+
             Route::get('edit/{id}', 'CategoryController@getEditCate');
             Route::get('delete/{id}', 'CategoryController@getDeleteCate');
         });
