@@ -28,5 +28,10 @@ Route::group(['namespace' => 'Admin'], function () {
     // Home
     Route::group(['prefix' => 'admin', 'middleware' => 'CheckedLogOut'], function () {
         Route::get('home', 'HomeController@getHome');
+        // category
+        Route::group(['prefix' => 'category'], function () {
+            Route::get('/', 'CategoryController@getCate');
+            Route::get('edit', 'CategoryController@getEditCate');
+        });
     });
 });
