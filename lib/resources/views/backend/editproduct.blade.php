@@ -19,59 +19,56 @@
 							<div class="col-xs-8">
 								<div class="form-group" >
 									<label>Tên sản phẩm</label>
-									<input required type="text" name="name" class="form-control">
+									<input required type="text" name="name" class="form-control" value="{{ $product->prod_name }}">
 								</div>
 								<div class="form-group" >
 									<label>Giá sản phẩm</label>
-									<input required type="number" name="price" class="form-control">
+									<input required type="number" name="price" class="form-control" value="{{ $product->prod_price }}">
 								</div>
 								<div class="form-group" >
 									<label>Ảnh sản phẩm</label>
 									<input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
-									<img id="avatar" class="thumbnail" width="300px" src="img/iphone7-plus-black-select-2016.jpg">
+									<img id="avatar" class="thumbnail" width="150px" src="{{ asset('lib/storage/app/avatar/'.$product->prod_img) }}">
 								</div>
 								<div class="form-group" >
 									<label>Phụ kiện</label>
-									<input required type="text" name="accessories" class="form-control">
+									<input required type="text" name="accessories" class="form-control" value="{{ $product->prod_accessories }}">
 								</div>
 								<div class="form-group" >
 									<label>Bảo hành</label>
-									<input required type="text" name="warranty" class="form-control">
+									<input required type="text" name="warranty" class="form-control" value="{{ $product->prod_warranty }}">
 								</div>
 								<div class="form-group" >
 									<label>Khuyến mãi</label>
-									<input required type="text" name="promotion" class="form-control">
+									<input required type="text" name="promotion" class="form-control" value="{{ $product->prod_promotion }}">
 								</div>
 								<div class="form-group" >
 									<label>Tình trạng</label>
-									<input required type="text" name="condition" class="form-control">
+									<input required type="text" name="condition" class="form-control" value="{{ $product->prod_condition }}">
 								</div>
 								<div class="form-group" >
 									<label>Trạng thái</label>
 									<select required name="status" class="form-control">
-										<option value="1">Còn hàng</option>
-										<option value="0">Hết hàng</option>
+										<option value="1" @if($product->prod_status == '1') selected  @endif>Còn hàng</option>
+										<option value="0" @if($product->prod_status == '0') selected  @endif>Hết hàng</option>
 									</select>
 								</div>
 								<div class="form-group" >
 									<label>Miêu tả</label>
-									<textarea required name="description"></textarea>
+									<textarea required name="description" class="ckeditor">{{ $product->prod_desc }}</textarea>
 								</div>
 								<div class="form-group" >
 									<label>Danh mục</label>
 									<select required name="cate" class="form-control">
-										<option value="1">iPhone</option>
-										<option value="2">Samsung</option>
-										<option value="3">Nokia</option>
-										<option value="4">HTC</option>
-										<option value="5">LG</option>
-										<option value="6">Sony</option>
+										@foreach ($list_cate as $cate)
+										<option value="{{ $cate->id }}" @if($product->cate_id == $cate->id) selected @endif>{{ $cate->cate_name }}</option>
+										@endforeach
 									</select>
 								</div>
 								<div class="form-group" >
 									<label>Sản phẩm nổi bật</label><br>
-									Có: <input type="radio" name="featured" value="1">
-									Không: <input type="radio" checked name="featured" value="0">
+									Có: <input type="radio" name="featured" value="1" @if($product->prod_featured == '1') checked @endif>
+									Không: <input type="radio" name="featured" value="0" @if($product->prod_featured == '0') checked @endif>
 								</div>
 								<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
 								<a href="#" class="btn btn-danger">Hủy bỏ</a>

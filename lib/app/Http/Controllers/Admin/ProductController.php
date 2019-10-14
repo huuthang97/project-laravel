@@ -46,8 +46,10 @@ class ProductController extends Controller
         
     }
 
-    public function getEditProduct(){
-        return view('backend.editproduct');
+    public function getEditProduct($id){
+        $data['product'] = products::find($id);
+        $data['list_cate'] = categories::all();
+        return view('backend.editproduct', $data);
     }
 
     public function postEditProduct(){
