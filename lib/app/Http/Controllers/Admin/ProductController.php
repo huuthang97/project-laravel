@@ -7,13 +7,13 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AddProductRequest;
 use App\Models\Categories;
 use App\Models\Products;
-
+use DB;
 
 class ProductController extends Controller
 {
     public function getProduct(){
-        
-        return view('backend.product');
+        $data['list_products'] = DB::table('products')->join('categories','products.cate_id', '=', 'categories.id')->get();
+        return view('backend.product', $data);
     }
 
     public function postProduct(){

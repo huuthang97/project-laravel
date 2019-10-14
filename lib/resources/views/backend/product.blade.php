@@ -29,84 +29,21 @@
 									</tr>
 								</thead>
 								<tbody>
+									@foreach ($list_products as $product)
 									<tr>
-										<td>1</td>
-										<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-										<td>21.990.000 VND</td>
-										<td>
-											<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-										</td>
-										<td>iPhone</td>
-										<td>
-											<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-										</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-										<td>21.990.000 VND</td>
-										<td>
-											<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-										</td>
-										<td>iPhone</td>
-										<td>
-											<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-										</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-										<td>21.990.000 VND</td>
-										<td>
-											<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-										</td>
-										<td>iPhone</td>
-										<td>
-											<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-										</td>
-									</tr>
-									<tr>
-										<td>4</td>
-										<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-										<td>21.990.000 VND</td>
-										<td>
-											<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-										</td>
-										<td>iPhone</td>
-										<td>
-											<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-										</td>
-									</tr>
-									<tr>
-										<td>5</td>
-										<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-										<td>21.990.000 VND</td>
-										<td>
-											<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-										</td>
-										<td>iPhone</td>
-										<td>
-											<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-										</td>
-									</tr>
-									<tr>
-										<td>6</td>
-										<td>iPhone 7 Plus 32GB quốc tế Mate Black</td>
-										<td>21.990.000 VND</td>
-										<td>
-											<img width="200px" src="img/iphone7-plus-black-select-2016.jpg" class="thumbnail">
-										</td>
-										<td>iPhone</td>
-										<td>
-											<a href="#" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a href="#" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
-										</td>
-									</tr>
+											<td>{{ $product->id }}</td>
+											<td>{{ $product->prod_name }}</td>
+											<td>{{ number_format($product->prod_price)}} VND</td>
+											<td>
+												<img width="150px" src="{{ asset('lib/storage/app/avatar/'.$product->prod_img)  }}" class="thumbnail">
+											</td>
+											<td>{{ $product->cate_name }}</td>
+											<td>
+												<a href="{{ asset('admin/product/edit/'.$product->id) }}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+												<a href="{{ asset('admin/product/delete/'.$product->id) }}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+											</td>
+										</tr>
+									@endforeach
 								</tbody>
 							</table>							
 						</div>
