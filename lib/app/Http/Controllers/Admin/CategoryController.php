@@ -17,7 +17,7 @@ class CategoryController extends Controller
     }
 
     public function postCate(AddCategoryRequest $request){
-        $category = new Categories;
+        $category = new categories;
         $category->cate_name = $request->name;
         $category->cate_slug = str_slug($request->name);
         $category->save();

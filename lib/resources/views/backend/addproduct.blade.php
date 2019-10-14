@@ -27,6 +27,7 @@
 									<input required type="number" name="price" class="form-control">
 								</div>
 								<div class="form-group" >
+									@include('errors.note')
 									<label>Ảnh sản phẩm</label>
 									<input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
 									<img id="avatar" class="thumbnail" width="300px" src="img/new_seo-10-512.png">
@@ -61,12 +62,9 @@
 								<div class="form-group" >
 									<label>Danh mục</label>
 									<select required name="cate" class="form-control">
-										<option value="1">iPhone</option>
-										<option value="2">Samsung</option>
-										<option value="3">Nokia</option>
-										<option value="4">HTC</option>
-										<option value="5">LG</option>
-										<option value="6">Sony</option>
+										@foreach ($list_cate as $cate)
+										<option value="{{ $cate->id }}">{{ $cate->cate_name }}</option>
+										@endforeach	
 									</select>
 								</div>
 								<div class="form-group" >
