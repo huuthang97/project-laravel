@@ -37,7 +37,8 @@ class CategoryController extends Controller
         return redirect('admin/category');
     }
 
-    public function getDeleteCate(){
-
+    public function getDeleteCate($id){
+        categories::destroy($id);
+        return back();
     }
 }

@@ -47,7 +47,7 @@
 										<td>{{ $cate->cate_name }}</td>
 										<td>
 											<a href="{{ asset('admin/category/edit').'/'.$cate->id }}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-											<a href="{{ asset('admin/category/delete/').$cate->id }}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
+											<a href="{{ asset('admin/category/delete').'/'.$cate->id }}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
 										  </td>
 									  </tr>
 								@endforeach
