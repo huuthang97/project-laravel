@@ -10,9 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// FRONTEND
+// FRONTEND 
 Route::get('/', 'FrontendController@getHome');
 Route::get('detail/{id}/{slug}.html', 'FrontendController@getDetail');
+Route::get('category/{id}/{slug}.html', 'FrontendController@getCategory');
 
 // BACKEND
 Route::group(['namespace' => 'Admin'], function () {
