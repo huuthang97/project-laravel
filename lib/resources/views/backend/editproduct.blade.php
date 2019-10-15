@@ -18,6 +18,7 @@
 						<div class="row" style="margin-bottom:40px">
 							<div class="col-xs-8">
 								<div class="form-group" >
+									@csrf
 									<label>Tên sản phẩm</label>
 									<input required type="text" name="name" class="form-control" value="{{ $product->prod_name }}">
 								</div>
