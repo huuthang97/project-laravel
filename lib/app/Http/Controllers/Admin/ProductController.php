@@ -78,7 +78,8 @@ class ProductController extends Controller
         return redirect('admin/product');
     }
 
-    public function getDeleteProduct(){
-        
+    public function getDeleteProduct($id){
+        products::destroy($id);
+        return back();
     }
 }
