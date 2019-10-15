@@ -15,10 +15,10 @@
 				<div class="panel-heading">Sửa sản phẩm</div>
 				<div class="panel-body">
 					<form method="post" enctype="multipart/form-data">
+						@csrf
 						<div class="row" style="margin-bottom:40px">
 							<div class="col-xs-8">
 								<div class="form-group" >
-									@csrf
 									<label>Tên sản phẩm</label>
 									<input required type="text" name="name" class="form-control" value="{{ $product->prod_name }}">
 								</div>
@@ -28,6 +28,7 @@
 								</div>
 								<div class="form-group" >
 									<label>Ảnh sản phẩm</label>
+									@include('errors.note')
 									<input id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
 									<img id="avatar" class="thumbnail" width="150px" src="{{ asset('lib/storage/app/avatar/'.$product->prod_img) }}">
 								</div>
@@ -71,8 +72,8 @@
 									Có: <input type="radio" name="featured" value="1" @if($product->prod_featured == '1') checked @endif>
 									Không: <input type="radio" name="featured" value="0" @if($product->prod_featured == '0') checked @endif>
 								</div>
-								<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
-								<a href="#" class="btn btn-danger">Hủy bỏ</a>
+								<input type="submit" name="submit" value="Cập nhật" class="btn btn-primary">
+								<a href="{{ asset('admin/product') }}" class="btn btn-danger">Hủy bỏ</a>
 							</div>
 						</div>
 					</form>
