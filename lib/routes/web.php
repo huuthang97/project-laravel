@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontendController@getHome');
 
 Route::group(['namespace' => 'Admin'], function () {
     // Login

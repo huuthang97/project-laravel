@@ -12,7 +12,7 @@ use DB;
 class ProductController extends Controller
 {
     public function getProduct(){
-        $data['list_products'] = DB::table('products')->join('categories','products.id', '=', 'categories.id')->orderBy('products.id','desc')->get();
+        $data['list_products'] = DB::table('categories')->join('products','categories.id', '=', 'products.cate_id')->orderBy('products.id','desc')->get();
         return view('backend.product', $data);
     }
 
@@ -48,7 +48,6 @@ class ProductController extends Controller
 
     public function getEditProduct($id){
         $data['product'] = products::find($id);
-        // $data['product'] = products::all();
         $data['list_cate'] = categories::all();
         return view('backend.editproduct', $data);
     }
