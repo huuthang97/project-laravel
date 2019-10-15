@@ -10,9 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// FRONTEND
 Route::get('/', 'FrontendController@getHome');
+Route::get('detail/{id}/{slug}.html', 'FrontendController@getDetail');
 
+// BACKEND
 Route::group(['namespace' => 'Admin'], function () {
     // Login
     Route::group(['prefix' => 'login', 'middleware' => 'CheckedLogIn'], function () {

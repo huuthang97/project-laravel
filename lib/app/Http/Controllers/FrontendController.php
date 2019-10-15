@@ -14,4 +14,9 @@ class FrontendController extends Controller
         $data['new'] = products::orderBy('id', 'desc')->take(8)->get();
         return view('frontend.home', $data);
     }
+
+    public function getDetail($id){
+        $data['product'] = products::find($id);
+        return view('frontend.details', $data);
+    }
 }
