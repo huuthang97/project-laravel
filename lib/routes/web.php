@@ -16,6 +16,13 @@ Route::get('detail/{id}/{slug}.html', 'FrontendController@getDetail');
 Route::post('detail/{id}/{slug}.html', 'FrontendController@postComment');
 Route::get('category/{id}/{slug}.html', 'FrontendController@getCategory');
 Route::get('search', 'FrontendController@getSearch');
+// Cart
+Route::group(['prefix' => 'cart'], function () {
+    Route::get('add/{id}', 'CartController@getAddCart');
+    Route::get('gio-hang.html', 'CartController@getShowCart');
+    Route::get('delete/{rowId}', 'CartController@getDeleteCart');
+    Route::get('update', 'CartController@getUpdateCart');
+});
 
 
 // BACKEND

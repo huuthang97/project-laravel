@@ -53,7 +53,7 @@
 				</div>
 				<div id="cart" class="col-md-2 col-sm-12 col-xs-12">
 					<a class="display" href="#">Giỏ hàng</a>
-					<a href="#">6</a>				    
+					<a href="#">@if(Cart::count() > 0) {{ Cart::count() }} @endif</a>				    
 				</div>
 			</div>			
 		</div>

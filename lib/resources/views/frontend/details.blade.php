@@ -18,7 +18,7 @@
 				<p>Tình trạng: {{ $product->prod_condition }}</p>
 				<p>Khuyến mại: {{ $product->prod_promotion }}</p>
 				<p>Còn hàng: {{ $product->prod_status }}</p>
-				<p class="add-cart text-center"><a href="#">Đặt hàng online</a></p>
+				<p class="add-cart text-center"><a href="{{ asset('cart/add/'.$product->id) }}">Đặt hàng online</a></p>
 			</div>
 		</div>							
 	</div>
