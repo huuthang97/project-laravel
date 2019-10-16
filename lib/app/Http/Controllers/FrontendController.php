@@ -9,6 +9,7 @@ use App\Models\Comments;
 
 
 
+
 class FrontendController extends Controller
 {
     public function getHome(){
@@ -47,4 +48,6 @@ class FrontendController extends Controller
         $data['products'] = products::where('prod_name', 'like', "%$keyword%")->get();
         return view('frontend.search',  $data);
     }
+
+    
 }

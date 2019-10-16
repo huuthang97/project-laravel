@@ -52,8 +52,8 @@
 					</form>
 				</div>
 				<div id="cart" class="col-md-2 col-sm-12 col-xs-12">
-					<a class="display" href="#">Giỏ hàng</a>
-					<a href="#">@if(Cart::count() > 0) {{ Cart::count() }} @endif</a>				    
+					<a class="display" href="{{ asset('cart/gio-hang.html') }}">Giỏ hàng</a>
+					<a href="{{ asset('cart/gio-hang.html') }}">@if(Cart::count() > 0) {{ Cart::count() }} @endif</a>				    
 				</div>
 			</div>			
 		</div>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Products;
 use Cart;
-
+use Mail;
 
 
 class CartController extends Controller
@@ -35,5 +35,27 @@ class CartController extends Controller
 
     public function getUpdateCart(Request $request){
         Cart::update($request->rowId, $request->qty);
+    }
+
+    public function postCart(Request $request){
+        $email = $request->email;
+        $name = $request->name;
+        // dd($email);
+        // dd($name);
+        $data['cart'] = Cart::content();
+        $data['info_customer'] = $request;
+        $data['total'] = Cart::total(0, ',');
+        Mail::send('frontend.email', $data, function ($message) use($email, $name) {
+            $message->from('huuthangk49hce2@gmail.com', 'Yeswin'); 
+            $message->to($email, $name);
+            // $message->cc('john@johndoe.com', 'John Doe');
+            $message->subject('Xác nhận thông tin đơn hàng');
+        });
+        // Cart::destroy();
+        return redirect('complete');
+    }
+
+    public function getComplete(){
+        return view('frontend.complete');
     }
 }

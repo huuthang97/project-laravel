@@ -20,10 +20,13 @@ Route::get('search', 'FrontendController@getSearch');
 Route::group(['prefix' => 'cart'], function () {
     Route::get('add/{id}', 'CartController@getAddCart');
     Route::get('gio-hang.html', 'CartController@getShowCart');
+    Route::post('gio-hang.html', 'CartController@postCart');
     Route::get('delete/{rowId}', 'CartController@getDeleteCart');
     Route::get('update', 'CartController@getUpdateCart');
+    
+    
 });
-
+Route::get('complete', 'CartController@getComplete');
 
 // BACKEND
 Route::group(['namespace' => 'Admin'], function () {
