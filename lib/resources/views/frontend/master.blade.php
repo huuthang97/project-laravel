@@ -39,7 +39,7 @@
 			<div class="row">
 				<div id="logo" class="col-md-3 col-sm-12 col-xs-12">
 					<h1>
-						<a href="{{ asset('/') }}"><img src="img/home/logo.png"></a>						
+						<a href="{{ asset('/') }}"><img width="200" src="img/home/logo.png"></a>						
 						<nav><a id="pull" class="btn btn-danger" href="#">
 							<i class="fa fa-bars"></i>
 						</a></nav>			
@@ -164,21 +164,21 @@
 			<div class="container">
 				<div class="row">				
 					<div id="logo-f" class="col-md-3 col-sm-12 col-xs-12 text-center">						
-						<a href="#"><img src="img/home/logo.png"></a>		
+						<a><img width="200" src="img/home/logo.png"></a>		
 					</div>
 					<div id="about" class="col-md-3 col-sm-12 col-xs-12">
 						<h3>About us</h3>
-						<p class="text-justify">Vietpro Academy thành lập năm 2009. Chúng tôi đào tạo chuyên sâu trong 2 lĩnh vực là Lập trình Website & Mobile nhằm cung cấp cho thị trường CNTT Việt Nam những lập trình viên thực sự chất lượng, có khả năng làm việc độc lập, cũng như Team Work ở mọi môi trường đòi hỏi sự chuyên nghiệp cao.</p>
+						<p class="text-justify">Cửa hàng chúng tôi sẽ mang đến cho quý khách những sản phẩm mẫu mã đẹp nhất thị trường cùng với giá cả hợp lý, chất lượng.</p>
 					</div>
 					<div id="hotline" class="col-md-3 col-sm-12 col-xs-12">
 						<h3>Hotline</h3>
-						<p>Phone Sale: (+84) 0988 550 553</p>
-						<p>Email: sirtuanhoang@gmail.com</p>
+						<p>Phone Sale: 0377.499.804</p>
+						<p>Email: huuthangk49hce1@gmail.com</p>
 					</div>
 					<div id="contact" class="col-md-3 col-sm-12 col-xs-12">
 						<h3>Contact Us</h3>
-						<p>Address 1: B8A Võ Văn Dũng - Hoàng Cầu Đống Đa - Hà Nội</p>
-						<p>Address 2: Số 25 Ngõ 178/71 - Tây Sơn Đống Đa - Hà Nội</p>
+						<p>Cơ sở 1: 13 - Hà Huy Tập - tp.Vinh</p>
+						<p>Cơ sở 2: Số 25 Ngõ 178/71 - Tây Sơn Đống Đa - Đà Nẵng</p>
 					</div>
 				</div>				
 			</div>
@@ -186,10 +186,10 @@
 				<div class="container">
 					<div class="row">
 						<div id="footer-b-l" class="col-md-6 col-sm-12 col-xs-12 text-center">
-							<p>Học viện Công nghệ Vietpro - www.vietpro.edu.vn</p>
+							<p>Cửa hàng di động uy tín - www.didong1001.com</p>
 						</div>
 						<div id="footer-b-r" class="col-md-6 col-sm-12 col-xs-12 text-center">
-							<p>© 2017 Vietpro Academy. All Rights Reserved</p>
+							<p>© 2019. All Rights Reserved</p>
 						</div>
 					</div>
 				</div>
